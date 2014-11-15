@@ -13,4 +13,6 @@
 
 @property (nonatomic,readonly) CLLocation *currentLocation;
 
++ (instancetype) sharedInstance;
+
 @end

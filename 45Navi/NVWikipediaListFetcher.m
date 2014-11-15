@@ -6,16 +6,20 @@
 //  Copyright (c) 2014 45Navi Team. All rights reserved.
 //
 
-#import "NVWikipediaFetcher.h"
+#import "NVWikipediaListFetcher.h"
 #import <CoreLocation/CoreLocation.h>
+#import "NVPlaceEntity.h"
+#import <AFNetworking.h>
 
-@interface NVWikipediaFetcher ()
+@interface NVWikipediaListFetcher ()
 
 @property (nonatomic) CLLocation *myLocation;
 
 @end
 
-@implementation NVWikipediaFetcher
+@implementation NVWikipediaListFetcher
+
+@synthesize placeEntity;
 
 - (instancetype)initWithLocation:(CLLocation *)location
 {
@@ -29,7 +33,20 @@
     
 }
 
-
+- (void)startFetchingWithCompletionHandler:(void (^)(NVPlaceEntity *result))completionHandler;
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [manager GET:[self.class urlForWikipediaAPIWithCentre:self.myLocation] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSDictionary *responeDict = responseObject;
+        NSLog(@"%@", responeDict);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+}
 
 + (NSString *)urlForWikipediaAPIWithCentre:(CLLocation *)centreLocation
 {

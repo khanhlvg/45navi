@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NVPlaceEntity.h"
 @class CLLocation;
 
-@interface NVWikipediaFetcher : NSObject
+@interface NVWikipediaListFetcher : NSObject
+
+@property (nonatomic,readonly) NVPlaceEntity *placeEntity;
 
 - (instancetype)initWithLocation:(CLLocation *)location;
+
+- (void)startFetchingWithCompletionHandler:(void (^)(NVPlaceEntity *result))completionHandler;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "ArticleViewController.h"
 #import "DraggableViewBackground.h"
+#import "NVWikipediaListFetcher.h"
+#import "NVLocationManager.h"
 
 @interface ArticleViewController ()
 
@@ -20,6 +22,16 @@
   [super viewDidLoad];
   DraggableViewBackground *draggableBackground = [[DraggableViewBackground alloc]initWithFrame:self.view.frame];
   [self.view addSubview:draggableBackground];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NVLocationManager *locationManager = [NVLocationManager sharedInstance];
+    NVWikipediaListFetcher *wikiFetcher = [[NVWikipediaListFetcher alloc] initWithLocation:locationManager.currentLocation];
+    
+    [wikiFetcher startFetchingWithCompletionHandler:^(NVPlaceEntity *result) {
+        
+    }];
 }
 
 @end

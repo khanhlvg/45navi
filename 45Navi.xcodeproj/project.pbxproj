@@ -21,7 +21,7 @@
 		D40553C01A174F5E000C0588 /* NVVoiceTextFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D40553BF1A174F5E000C0588 /* NVVoiceTextFetcher.m */; };
 		D43EC93D1A179C4F0084BD68 /* NVPlaceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D43EC93C1A179C4F0084BD68 /* NVPlaceEntity.m */; };
 		D4A2B8D51A177B3000E43513 /* NVVoiceTextService.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B8D41A177B3000E43513 /* NVVoiceTextService.m */; };
-		D4A2B8D81A177B3700E43513 /* NVWikipediaFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B8D71A177B3700E43513 /* NVWikipediaFetcher.m */; };
+		D4A2B8D81A177B3700E43513 /* NVWikipediaListFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B8D71A177B3700E43513 /* NVWikipediaListFetcher.m */; };
 		D4A2B8DB1A177B4000E43513 /* NVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B8DA1A177B4000E43513 /* NVLocationManager.m */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +63,8 @@
 		D43EC93C1A179C4F0084BD68 /* NVPlaceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVPlaceEntity.m; sourceTree = "<group>"; };
 		D4A2B8D31A177B3000E43513 /* NVVoiceTextService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVVoiceTextService.h; sourceTree = "<group>"; };
 		D4A2B8D41A177B3000E43513 /* NVVoiceTextService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVVoiceTextService.m; sourceTree = "<group>"; };
-		D4A2B8D61A177B3700E43513 /* NVWikipediaFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVWikipediaFetcher.h; sourceTree = "<group>"; };
-		D4A2B8D71A177B3700E43513 /* NVWikipediaFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVWikipediaFetcher.m; sourceTree = "<group>"; };
+		D4A2B8D61A177B3700E43513 /* NVWikipediaListFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVWikipediaListFetcher.h; sourceTree = "<group>"; };
+		D4A2B8D71A177B3700E43513 /* NVWikipediaListFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVWikipediaListFetcher.m; sourceTree = "<group>"; };
 		D4A2B8D91A177B4000E43513 /* NVLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVLocationManager.h; sourceTree = "<group>"; };
 		D4A2B8DA1A177B4000E43513 /* NVLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVLocationManager.m; sourceTree = "<group>"; };
 		F387E32E358A24FC24796D38 /* Pods-45Navi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-45Navi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-45Navi/Pods-45Navi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -200,8 +200,8 @@
 			children = (
 				D40553BE1A174F5E000C0588 /* NVVoiceTextFetcher.h */,
 				D40553BF1A174F5E000C0588 /* NVVoiceTextFetcher.m */,
-				D4A2B8D61A177B3700E43513 /* NVWikipediaFetcher.h */,
-				D4A2B8D71A177B3700E43513 /* NVWikipediaFetcher.m */,
+				D4A2B8D61A177B3700E43513 /* NVWikipediaListFetcher.h */,
+				D4A2B8D71A177B3700E43513 /* NVWikipediaListFetcher.m */,
 			);
 			name = Fetcher;
 			sourceTree = "<group>";
@@ -358,7 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4A2B8D81A177B3700E43513 /* NVWikipediaFetcher.m in Sources */,
+				D4A2B8D81A177B3700E43513 /* NVWikipediaListFetcher.m in Sources */,
 				D43EC93D1A179C4F0084BD68 /* NVPlaceEntity.m in Sources */,
 				84A9166D1A177488003FE98E /* DraggableViewBackground.m in Sources */,
 				D4A2B8DB1A177B4000E43513 /* NVLocationManager.m in Sources */,
