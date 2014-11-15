@@ -42,5 +42,7 @@
 @property (retain,nonatomic)NSArray* exampleCardLabels; //%%% the labels the cards
 @property (retain,nonatomic)NSMutableArray* allCards; //%%% the labels the cards
 
+#define CARD_HEIGHT 466.0
+#define CARD_WIDTH 310.0
 
 @end
