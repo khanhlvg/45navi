@@ -10,4 +10,7 @@
 
 @interface NVVoiceTextFetcher : NSObject
 
+- (instancetype)initWithText:(NSString *)text;
+- (void)startFetchingWithCompletionHandler:(void (^)(NSData *wavData))completionHandler;
+
 @end

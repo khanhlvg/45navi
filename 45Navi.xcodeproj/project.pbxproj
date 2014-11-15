@@ -19,6 +19,9 @@
 		D40553A81A17336C000C0588 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40553A61A17336C000C0588 /* LaunchScreen.xib */; };
 		D40553B41A17336C000C0588 /* _5NaviTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D40553B31A17336C000C0588 /* _5NaviTests.m */; };
 		D40553C01A174F5E000C0588 /* NVVoiceTextFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D40553BF1A174F5E000C0588 /* NVVoiceTextFetcher.m */; };
+		D4A2B8D51A177B3000E43513 /* NVVoiceTextService.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B8D41A177B3000E43513 /* NVVoiceTextService.m */; };
+		D4A2B8D81A177B3700E43513 /* NVWikipediaFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B8D71A177B3700E43513 /* NVWikipediaFetcher.m */; };
+		D4A2B8DB1A177B4000E43513 /* NVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B8DA1A177B4000E43513 /* NVLocationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,12 @@
 		D40553B31A17336C000C0588 /* _5NaviTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _5NaviTests.m; sourceTree = "<group>"; };
 		D40553BE1A174F5E000C0588 /* NVVoiceTextFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVVoiceTextFetcher.h; sourceTree = "<group>"; };
 		D40553BF1A174F5E000C0588 /* NVVoiceTextFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVVoiceTextFetcher.m; sourceTree = "<group>"; };
+		D4A2B8D31A177B3000E43513 /* NVVoiceTextService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVVoiceTextService.h; sourceTree = "<group>"; };
+		D4A2B8D41A177B3000E43513 /* NVVoiceTextService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVVoiceTextService.m; sourceTree = "<group>"; };
+		D4A2B8D61A177B3700E43513 /* NVWikipediaFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVWikipediaFetcher.h; sourceTree = "<group>"; };
+		D4A2B8D71A177B3700E43513 /* NVWikipediaFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVWikipediaFetcher.m; sourceTree = "<group>"; };
+		D4A2B8D91A177B4000E43513 /* NVLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVLocationManager.h; sourceTree = "<group>"; };
+		D4A2B8DA1A177B4000E43513 /* NVLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVLocationManager.m; sourceTree = "<group>"; };
 		F387E32E358A24FC24796D38 /* Pods-45Navi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-45Navi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-45Navi/Pods-45Navi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,10 +166,40 @@
 		D40553BD1A174F28000C0588 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D40553BE1A174F5E000C0588 /* NVVoiceTextFetcher.h */,
-				D40553BF1A174F5E000C0588 /* NVVoiceTextFetcher.m */,
+				D4A2B8DC1A177B4900E43513 /* Manager */,
+				D4A2B8DD1A177B5000E43513 /* Fetcher */,
+				D4A2B8DE1A177B5600E43513 /* Service */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		D4A2B8DC1A177B4900E43513 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D4A2B8D91A177B4000E43513 /* NVLocationManager.h */,
+				D4A2B8DA1A177B4000E43513 /* NVLocationManager.m */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		D4A2B8DD1A177B5000E43513 /* Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				D40553BE1A174F5E000C0588 /* NVVoiceTextFetcher.h */,
+				D40553BF1A174F5E000C0588 /* NVVoiceTextFetcher.m */,
+				D4A2B8D61A177B3700E43513 /* NVWikipediaFetcher.h */,
+				D4A2B8D71A177B3700E43513 /* NVWikipediaFetcher.m */,
+			);
+			name = Fetcher;
+			sourceTree = "<group>";
+		};
+		D4A2B8DE1A177B5600E43513 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D4A2B8D31A177B3000E43513 /* NVVoiceTextService.h */,
+				D4A2B8D41A177B3000E43513 /* NVVoiceTextService.m */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 		FB8D5285A1D83CF24D236EEF /* Frameworks */ = {
@@ -306,13 +345,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A2B8D81A177B3700E43513 /* NVWikipediaFetcher.m in Sources */,
 				84A9166D1A177488003FE98E /* DraggableViewBackground.m in Sources */,
+				D4A2B8DB1A177B4000E43513 /* NVLocationManager.m in Sources */,
 				D40553971A17336C000C0588 /* AppDelegate.m in Sources */,
 				84A9166E1A177488003FE98E /* OverlayView.m in Sources */,
 				84A9166B1A177488003FE98E /* ArticleViewController.m in Sources */,
 				D40553941A17336C000C0588 /* main.m in Sources */,
 				D40553C01A174F5E000C0588 /* NVVoiceTextFetcher.m in Sources */,
 				84A9166C1A177488003FE98E /* DraggableView.m in Sources */,
+				D4A2B8D51A177B3000E43513 /* NVVoiceTextService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
