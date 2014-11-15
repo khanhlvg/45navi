@@ -124,16 +124,18 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
 // This should be customized with your own action
 -(void)cardSwipedRight:(UIView *)card
 {
-    //do whatever you want with the card that was swiped
-    //    DraggableView *c = (DraggableView *)card;
-    
-    [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
-    
-    if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
-        [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
-        cardsLoadedIndex++;//%%% loaded a card, so have to increment count
-        [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
-    }
+  [self.delegate gotoNavigation];
+
+//    //do whatever you want with the card that was swiped
+//    //    DraggableView *c = (DraggableView *)card;
+//    
+//    [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
+//    
+//    if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
+//        [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
+//        cardsLoadedIndex++;//%%% loaded a card, so have to increment count
+//        [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
+//    }
 
 }
 

@@ -21,6 +21,7 @@
 {
   [super viewDidLoad];
   DraggableViewBackground *draggableBackground = [[DraggableViewBackground alloc]initWithFrame:self.view.frame];
+  draggableBackground.delegate = self;
   [self.view addSubview:draggableBackground];
 }
 
@@ -32,6 +33,10 @@
     [wikiFetcher startFetchingWithCompletionHandler:^(NVPlaceEntity *result) {
         
     }];
+}
+
+-(void)gotoNavigation{
+  [self performSegueWithIdentifier:@"ArticleToNavigationSegue" sender:self];
 }
 
 @end

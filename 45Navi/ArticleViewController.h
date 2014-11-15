@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ArticleViewController : UIViewController
+@protocol ArticleViewDelegate <NSObject>
+-(void)gotoNavigation;
+@end
+
+@interface ArticleViewController : UIViewController<ArticleViewDelegate>
 
 @end
