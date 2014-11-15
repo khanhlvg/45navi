@@ -31,6 +31,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "ArticleViewController.h"
 #import "DraggableView.h"
 
 @interface DraggableViewBackground : UIView <DraggableViewDelegate>
@@ -38,9 +39,11 @@
 //methods called in DraggableView
 -(void)cardSwipedLeft:(UIView *)card;
 -(void)cardSwipedRight:(UIView *)card;
+-(void)gotoNavigation;
 
 @property (retain,nonatomic)NSArray* exampleCardLabels; //%%% the labels the cards
 @property (retain,nonatomic)NSMutableArray* allCards; //%%% the labels the cards
+@property (weak) id <ArticleViewDelegate> delegate;
 
 #define CARD_HEIGHT 466.0
 #define CARD_WIDTH 310.0

@@ -22,6 +22,7 @@
 {
   [super viewDidLoad];
   DraggableViewBackground *draggableBackground = [[DraggableViewBackground alloc]initWithFrame:self.view.frame];
+  draggableBackground.delegate = self;
   [self.view addSubview:draggableBackground];
 }
 
@@ -37,6 +38,10 @@
     NVVoiceTextService *voiceService = [NVVoiceTextService sharedInstance];
     [voiceService readText:@"実際のカヤックやカヌーに搭乗し、それを操作することで船の基本や知識を学ぶための施設。"
      "2008年シーズンまでは、遊泳プールとして毎年営業していた。現地案内板には「シーサイドプール」と表記はそのままだが、公式サイトは「体験教室プール」に変更されている。"];
+}
+
+-(void)gotoNavigation{
+  [self performSegueWithIdentifier:@"ArticleToNavigationSegue" sender:self];
 }
 
 @end
