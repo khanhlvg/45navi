@@ -17,6 +17,8 @@
 
 @end
 
+static NSString *const kBaseURL = @"http://ja.wikipedia.org/w/api.php";
+
 @implementation NVWikipediaListFetcher
 
 @synthesize placeEntity;
@@ -38,7 +40,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     
-    [manager GET:[self.class urlForWikipediaAPIWithCentre:self.myLocation] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:kBaseURL parameters:[self.class queryParameterWithCentreLocation:self.myLocation] success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSDictionary *responeDict = responseObject;
         NSLog(@"%@", responeDict);
@@ -57,6 +59,28 @@
                           centreLocation.coordinate.longitude];
     
     return [NSString stringWithFormat:@"%@%@",baseURL,location];
+}
+
++ (NSDictionary *)queryParameterWithCentreLocation:(CLLocation *)centreLocation
+{
+    NSMutableDictionary *param = [NSMutableDictionary new];
+    
+    [param setObject:@"query" forKey:@"action"];
+    [param setObject:@"json" forKey:@"format"];
+    [param setObject:@"max" forKey:@"colimit"];
+    [param setObject:@"pageimages|coordinates" forKey:@"prop"];
+    [param setObject:@"150" forKey:@"pithumbsize"];
+    [param setObject:@"50" forKey:@"pilimit"];
+    [param setObject:@"geosearch" forKey:@"generator"];
+    [param setObject:@"1000" forKey:@"ggsradius"];
+    [param setObject:@"0" forKey:@"ggsnamespace"];
+    [param setObject:@"50" forKey:@"ggslimit"];
+    [param setObject:[NSString stringWithFormat:@"%f|%f",
+                      centreLocation.coordinate.latitude,
+                      centreLocation.coordinate.longitude] forKey:@"ggscoord"];
+    //[param setObject:@"" forKey:@""];
+    
+    return [NSDictionary dictionaryWithDictionary:param];
 }
 
 @end
