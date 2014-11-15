@@ -52,9 +52,9 @@ typedef NS_ENUM(NSInteger, NVTransitType) {
  */
 @property (nonatomic) NSString *imageURL;
 
-/*
- @abstract 行き先の代表画像そのもの
- */
-@property (nonatomic) UIImage *image;
+///*
+// @abstract 行き先の代表画像そのもの
+// */
+//@property (nonatomic) UIImage *image;
 
 @end

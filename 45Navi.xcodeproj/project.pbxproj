@@ -25,6 +25,9 @@
 		D4A2B8D51A177B3000E43513 /* NVVoiceTextService.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B8D41A177B3000E43513 /* NVVoiceTextService.m */; };
 		D4A2B8D81A177B3700E43513 /* NVWikipediaListFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B8D71A177B3700E43513 /* NVWikipediaListFetcher.m */; };
 		D4A2B8DB1A177B4000E43513 /* NVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B8DA1A177B4000E43513 /* NVLocationManager.m */; };
+		D4F697EA1A17BE6F000AB5DB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F697E91A17BE6F000AB5DB /* CoreLocation.framework */; };
+		D4F697EC1A17BE74000AB5DB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F697EB1A17BE74000AB5DB /* MapKit.framework */; };
+		D4F697EE1A17BE7C000AB5DB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F697ED1A17BE7C000AB5DB /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		D4A2B8D71A177B3700E43513 /* NVWikipediaListFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVWikipediaListFetcher.m; sourceTree = "<group>"; };
 		D4A2B8D91A177B4000E43513 /* NVLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVLocationManager.h; sourceTree = "<group>"; };
 		D4A2B8DA1A177B4000E43513 /* NVLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVLocationManager.m; sourceTree = "<group>"; };
+		D4F697E91A17BE6F000AB5DB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D4F697EB1A17BE74000AB5DB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D4F697ED1A17BE7C000AB5DB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F387E32E358A24FC24796D38 /* Pods-45Navi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-45Navi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-45Navi/Pods-45Navi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F697EE1A17BE7C000AB5DB /* AVFoundation.framework in Frameworks */,
+				D4F697EC1A17BE74000AB5DB /* MapKit.framework in Frameworks */,
+				D4F697EA1A17BE6F000AB5DB /* CoreLocation.framework in Frameworks */,
 				99620AC990C933D10C70D856 /* libPods-45Navi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +243,9 @@
 		FB8D5285A1D83CF24D236EEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4F697ED1A17BE7C000AB5DB /* AVFoundation.framework */,
+				D4F697EB1A17BE74000AB5DB /* MapKit.framework */,
+				D4F697E91A17BE6F000AB5DB /* CoreLocation.framework */,
 				28017CA45D420B9F428D47FB /* libPods-45Navi.a */,
 			);
 			name = Frameworks;

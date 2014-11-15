@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "NVPlaceEntity.h"
 #import <AFNetworking.h>
+#import <MapKit/MapKit.h>
 
 @interface NVWikipediaListFetcher ()
 
@@ -55,6 +56,8 @@ static NSString *const kBaseURL = @"http://ja.wikipedia.org/w/api.php";
             
             entity.imageURL = item[@"thumbnail"][@"source"];
             
+            
+            
             [resultList addObject:entity];
             NSLog(@"Title = %@", entity.placeName);
         }
@@ -65,17 +68,6 @@ static NSString *const kBaseURL = @"http://ja.wikipedia.org/w/api.php";
         NSLog(@"Error: %@", error);
         completionHandler(nil);
     }];
-}
-
-+ (NSString *)urlForWikipediaAPIWithCentre:(CLLocation *)centreLocation
-{
-    NSString *baseURL = @"http://ja.wikipedia.org/w/api.php?action=query&format=json&colimit=max&prop=pageimages|coordinates&pithumbsize=150&pilimit=50&generator=geosearch&ggsradius=1000&ggsnamespace=0&ggslimit=50";
-    
-    NSString *location = [NSString stringWithFormat:@"&ggscoord=%f|%f",
-                          centreLocation.coordinate.latitude,
-                          centreLocation.coordinate.longitude];
-    
-    return [NSString stringWithFormat:@"%@%@",baseURL,location];
 }
 
 + (NSDictionary *)queryParameterWithCentreLocation:(CLLocation *)centreLocation
@@ -98,6 +90,27 @@ static NSString *const kBaseURL = @"http://ja.wikipedia.org/w/api.php";
     //[param setObject:@"" forKey:@""];
     
     return [NSDictionary dictionaryWithDictionary:param];
+}
+
+- (NVPlaceEntity *)processRouteForPlaceEntity:(NVPlaceEntity *)entity
+{
+//    MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
+//    
+//    request.source = [MKMapItem mapItemForCurrentLocation];
+//    
+//    request.destination = _destination;
+//    request.requestsAlternateRoutes = YES;
+//    MKDirections *directions =
+//    [[MKDirections alloc] initWithRequest:request];
+//    
+//    [directions calculateDirectionsWithCompletionHandler:
+//     ^(MKDirectionsResponse *response, NSError *error) {
+//         if (error) {
+//             // Handle Error
+//         } else {
+//             [self showRoute:response];
+//         }
+//     }];
 }
 
 @end
