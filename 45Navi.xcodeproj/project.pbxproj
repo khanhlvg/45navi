@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844AE2891A17AF9800D5632E /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844AE2881A17AF9800D5632E /* NavigationViewController.m */; };
+		844AE28B1A17AFFF00D5632E /* sample2.png in Resources */ = {isa = PBXBuildFile; fileRef = 844AE28A1A17AFFF00D5632E /* sample2.png */; };
+		844AE28D1A17BB3200D5632E /* sample3.png in Resources */ = {isa = PBXBuildFile; fileRef = 844AE28C1A17BB3200D5632E /* sample3.png */; };
 		84A9166B1A177488003FE98E /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A916641A177488003FE98E /* ArticleViewController.m */; };
 		84A9166C1A177488003FE98E /* DraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A916661A177488003FE98E /* DraggableView.m */; };
 		84A9166D1A177488003FE98E /* DraggableViewBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A916681A177488003FE98E /* DraggableViewBackground.m */; };
@@ -40,6 +43,10 @@
 /* Begin PBXFileReference section */
 		28017CA45D420B9F428D47FB /* libPods-45Navi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-45Navi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D723D99FABB7642F027B6D /* Pods-45Navi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-45Navi.release.xcconfig"; path = "Pods/Target Support Files/Pods-45Navi/Pods-45Navi.release.xcconfig"; sourceTree = "<group>"; };
+		844AE2871A17AF9800D5632E /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		844AE2881A17AF9800D5632E /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		844AE28A1A17AFFF00D5632E /* sample2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample2.png; sourceTree = "<group>"; };
+		844AE28C1A17BB3200D5632E /* sample3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample3.png; sourceTree = "<group>"; };
 		84A916631A177488003FE98E /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
 		84A916641A177488003FE98E /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
 		84A916651A177488003FE98E /* DraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableView.h; sourceTree = "<group>"; };
@@ -108,6 +115,10 @@
 				84A916691A177488003FE98E /* OverlayView.h */,
 				84A9166A1A177488003FE98E /* OverlayView.m */,
 				84A916701A179CF1003FE98E /* sample.png */,
+				844AE28A1A17AFFF00D5632E /* sample2.png */,
+				844AE28C1A17BB3200D5632E /* sample3.png */,
+				844AE2871A17AF9800D5632E /* NavigationViewController.h */,
+				844AE2881A17AF9800D5632E /* NavigationViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -323,8 +334,10 @@
 			files = (
 				D40553A31A17336C000C0588 /* Main.storyboard in Resources */,
 				D40553A81A17336C000C0588 /* LaunchScreen.xib in Resources */,
+				844AE28B1A17AFFF00D5632E /* sample2.png in Resources */,
 				D40553A51A17336C000C0588 /* Images.xcassets in Resources */,
 				84A916711A179CF1003FE98E /* sample.png in Resources */,
+				844AE28D1A17BB3200D5632E /* sample3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +395,7 @@
 				D40553971A17336C000C0588 /* AppDelegate.m in Sources */,
 				84A9166E1A177488003FE98E /* OverlayView.m in Sources */,
 				84A9166B1A177488003FE98E /* ArticleViewController.m in Sources */,
+				844AE2891A17AF9800D5632E /* NavigationViewController.m in Sources */,
 				D40553941A17336C000C0588 /* main.m in Sources */,
 				D40553C01A174F5E000C0588 /* NVVoiceTextFetcher.m in Sources */,
 				84A9166C1A177488003FE98E /* DraggableView.m in Sources */,
