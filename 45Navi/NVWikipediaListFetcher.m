@@ -111,6 +111,7 @@ static NSString *const kBaseURL = @"http://ja.wikipedia.org/w/api.php";
 //             [self showRoute:response];
 //         }
 //     }];
+    return nil;
 }
 
 @end
