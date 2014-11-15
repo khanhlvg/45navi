@@ -19,6 +19,7 @@
 		D40553A81A17336C000C0588 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40553A61A17336C000C0588 /* LaunchScreen.xib */; };
 		D40553B41A17336C000C0588 /* _5NaviTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D40553B31A17336C000C0588 /* _5NaviTests.m */; };
 		D40553C01A174F5E000C0588 /* NVVoiceTextFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D40553BF1A174F5E000C0588 /* NVVoiceTextFetcher.m */; };
+		D43EC93D1A179C4F0084BD68 /* NVPlaceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D43EC93C1A179C4F0084BD68 /* NVPlaceEntity.m */; };
 		D4A2B8D51A177B3000E43513 /* NVVoiceTextService.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B8D41A177B3000E43513 /* NVVoiceTextService.m */; };
 		D4A2B8D81A177B3700E43513 /* NVWikipediaFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B8D71A177B3700E43513 /* NVWikipediaFetcher.m */; };
 		D4A2B8DB1A177B4000E43513 /* NVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A2B8DA1A177B4000E43513 /* NVLocationManager.m */; };
@@ -58,6 +59,8 @@
 		D40553B31A17336C000C0588 /* _5NaviTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _5NaviTests.m; sourceTree = "<group>"; };
 		D40553BE1A174F5E000C0588 /* NVVoiceTextFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVVoiceTextFetcher.h; sourceTree = "<group>"; };
 		D40553BF1A174F5E000C0588 /* NVVoiceTextFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVVoiceTextFetcher.m; sourceTree = "<group>"; };
+		D43EC93B1A179C4F0084BD68 /* NVPlaceEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVPlaceEntity.h; sourceTree = "<group>"; };
+		D43EC93C1A179C4F0084BD68 /* NVPlaceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVPlaceEntity.m; sourceTree = "<group>"; };
 		D4A2B8D31A177B3000E43513 /* NVVoiceTextService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVVoiceTextService.h; sourceTree = "<group>"; };
 		D4A2B8D41A177B3000E43513 /* NVVoiceTextService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVVoiceTextService.m; sourceTree = "<group>"; };
 		D4A2B8D61A177B3700E43513 /* NVWikipediaFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVWikipediaFetcher.h; sourceTree = "<group>"; };
@@ -169,8 +172,18 @@
 				D4A2B8DC1A177B4900E43513 /* Manager */,
 				D4A2B8DD1A177B5000E43513 /* Fetcher */,
 				D4A2B8DE1A177B5600E43513 /* Service */,
+				D43EC93E1A179C580084BD68 /* Entity */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		D43EC93E1A179C580084BD68 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D43EC93B1A179C4F0084BD68 /* NVPlaceEntity.h */,
+				D43EC93C1A179C4F0084BD68 /* NVPlaceEntity.m */,
+			);
+			name = Entity;
 			sourceTree = "<group>";
 		};
 		D4A2B8DC1A177B4900E43513 /* Manager */ = {
@@ -346,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A2B8D81A177B3700E43513 /* NVWikipediaFetcher.m in Sources */,
+				D43EC93D1A179C4F0084BD68 /* NVPlaceEntity.m in Sources */,
 				84A9166D1A177488003FE98E /* DraggableViewBackground.m in Sources */,
 				D4A2B8DB1A177B4000E43513 /* NVLocationManager.m in Sources */,
 				D40553971A17336C000C0588 /* AppDelegate.m in Sources */,

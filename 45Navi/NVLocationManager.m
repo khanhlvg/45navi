@@ -54,7 +54,7 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@" LocationManager failed ....");
-    _currentLocation = [[CLLocation alloc] initWithLatitude:100 longitude:100];
+    _currentLocation = [[CLLocation alloc] initWithLatitude:35.619932 longitude:139.7814267];
 }
 
 @end
