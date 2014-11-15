@@ -11,6 +11,7 @@
 		84A9166C1A177488003FE98E /* DraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A916661A177488003FE98E /* DraggableView.m */; };
 		84A9166D1A177488003FE98E /* DraggableViewBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A916681A177488003FE98E /* DraggableViewBackground.m */; };
 		84A9166E1A177488003FE98E /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A9166A1A177488003FE98E /* OverlayView.m */; };
+		84A916711A179CF1003FE98E /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A916701A179CF1003FE98E /* sample.png */; };
 		99620AC990C933D10C70D856 /* libPods-45Navi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28017CA45D420B9F428D47FB /* libPods-45Navi.a */; };
 		D40553941A17336C000C0588 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D40553931A17336C000C0588 /* main.m */; };
 		D40553971A17336C000C0588 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D40553961A17336C000C0588 /* AppDelegate.m */; };
@@ -46,6 +47,7 @@
 		84A916681A177488003FE98E /* DraggableViewBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableViewBackground.m; sourceTree = "<group>"; };
 		84A916691A177488003FE98E /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
 		84A9166A1A177488003FE98E /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
+		84A916701A179CF1003FE98E /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
 		D405538E1A17336C000C0588 /* 45Navi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 45Navi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40553921A17336C000C0588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D40553931A17336C000C0588 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +91,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84A9166F1A179CDF003FE98E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				84A916631A177488003FE98E /* ArticleViewController.h */,
+				84A916641A177488003FE98E /* ArticleViewController.m */,
+				84A916651A177488003FE98E /* DraggableView.h */,
+				84A916661A177488003FE98E /* DraggableView.m */,
+				84A916671A177488003FE98E /* DraggableViewBackground.h */,
+				84A916681A177488003FE98E /* DraggableViewBackground.m */,
+				84A916691A177488003FE98E /* OverlayView.h */,
+				84A9166A1A177488003FE98E /* OverlayView.m */,
+				84A916701A179CF1003FE98E /* sample.png */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		9EBBFA8424E877269C79F68B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,14 +139,7 @@
 		D40553901A17336C000C0588 /* 45Navi */ = {
 			isa = PBXGroup;
 			children = (
-				84A916631A177488003FE98E /* ArticleViewController.h */,
-				84A916641A177488003FE98E /* ArticleViewController.m */,
-				84A916651A177488003FE98E /* DraggableView.h */,
-				84A916661A177488003FE98E /* DraggableView.m */,
-				84A916671A177488003FE98E /* DraggableViewBackground.h */,
-				84A916681A177488003FE98E /* DraggableViewBackground.m */,
-				84A916691A177488003FE98E /* OverlayView.h */,
-				84A9166A1A177488003FE98E /* OverlayView.m */,
+				84A9166F1A179CDF003FE98E /* UI */,
 				D40553BD1A174F28000C0588 /* Model */,
 				D40553951A17336C000C0588 /* AppDelegate.h */,
 				D40553961A17336C000C0588 /* AppDelegate.m */,
@@ -308,6 +319,7 @@
 				D40553A31A17336C000C0588 /* Main.storyboard in Resources */,
 				D40553A81A17336C000C0588 /* LaunchScreen.xib in Resources */,
 				D40553A51A17336C000C0588 /* Images.xcassets in Resources */,
+				84A916711A179CF1003FE98E /* sample.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
