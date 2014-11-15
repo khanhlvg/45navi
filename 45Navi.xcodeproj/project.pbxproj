@@ -10,6 +10,7 @@
 		844AE2891A17AF9800D5632E /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844AE2881A17AF9800D5632E /* NavigationViewController.m */; };
 		844AE28B1A17AFFF00D5632E /* sample2.png in Resources */ = {isa = PBXBuildFile; fileRef = 844AE28A1A17AFFF00D5632E /* sample2.png */; };
 		844AE28D1A17BB3200D5632E /* sample3.png in Resources */ = {isa = PBXBuildFile; fileRef = 844AE28C1A17BB3200D5632E /* sample3.png */; };
+		844AE2901A1816C400D5632E /* GoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844AE28F1A1816C400D5632E /* GoalViewController.m */; };
 		84A9166B1A177488003FE98E /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A916641A177488003FE98E /* ArticleViewController.m */; };
 		84A9166C1A177488003FE98E /* DraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A916661A177488003FE98E /* DraggableView.m */; };
 		84A9166D1A177488003FE98E /* DraggableViewBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A916681A177488003FE98E /* DraggableViewBackground.m */; };
@@ -50,6 +51,8 @@
 		844AE2881A17AF9800D5632E /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		844AE28A1A17AFFF00D5632E /* sample2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample2.png; sourceTree = "<group>"; };
 		844AE28C1A17BB3200D5632E /* sample3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample3.png; sourceTree = "<group>"; };
+		844AE28E1A1816C400D5632E /* GoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalViewController.h; sourceTree = "<group>"; };
+		844AE28F1A1816C400D5632E /* GoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalViewController.m; sourceTree = "<group>"; };
 		84A916631A177488003FE98E /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
 		84A916641A177488003FE98E /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
 		84A916651A177488003FE98E /* DraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableView.h; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				844AE28C1A17BB3200D5632E /* sample3.png */,
 				844AE2871A17AF9800D5632E /* NavigationViewController.h */,
 				844AE2881A17AF9800D5632E /* NavigationViewController.m */,
+				844AE28E1A1816C400D5632E /* GoalViewController.h */,
+				844AE28F1A1816C400D5632E /* GoalViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -405,6 +410,7 @@
 				84A9166D1A177488003FE98E /* DraggableViewBackground.m in Sources */,
 				D4A2B8DB1A177B4000E43513 /* NVLocationManager.m in Sources */,
 				D40553971A17336C000C0588 /* AppDelegate.m in Sources */,
+				844AE2901A1816C400D5632E /* GoalViewController.m in Sources */,
 				84A9166E1A177488003FE98E /* OverlayView.m in Sources */,
 				84A9166B1A177488003FE98E /* ArticleViewController.m in Sources */,
 				844AE2891A17AF9800D5632E /* NavigationViewController.m in Sources */,
