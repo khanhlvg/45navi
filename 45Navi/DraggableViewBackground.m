@@ -7,6 +7,7 @@
 //
 
 #import "DraggableViewBackground.h"
+#import "ArticleImageFactory.h"
 
 @implementation DraggableViewBackground{
     NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
@@ -20,8 +21,6 @@
 //this makes it so only two cards are loaded at a time to
 //avoid performance and memory costs
 static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any given time, must be greater than 1
-static const float CARD_HEIGHT = 466; //%%% height of the draggable card
-static const float CARD_WIDTH = 310; //%%% width of the draggable card
 
 @synthesize exampleCardLabels; //%%% all the labels I'm using as example data at the moment
 @synthesize allCards;//%%% all the cards
@@ -68,7 +67,8 @@ static const float CARD_WIDTH = 310; //%%% width of the draggable card
 {
     DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2-30, CARD_WIDTH, CARD_HEIGHT)];
     
-    draggableView.content.image = [UIImage imageNamed:@"sample.png"]; //[exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
+  draggableView.content.image = [ArticleImageFactory imageMake:@"テレコムセンター" image:[UIImage imageNamed:@"sample.png"]] ;
+  //[exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
     draggableView.delegate = self;
     return draggableView;
 }
