@@ -18,7 +18,7 @@
     CLLocation* _currentLocation;
 }
 
-@synthesize currentLocation;
+@synthesize currentLocation=_currentLocation;
 
 + (instancetype) sharedInstance
 {
@@ -41,6 +41,8 @@
         self.manager.delegate = self;
         self.manager.desiredAccuracy = kCLLocationAccuracyBest;
         [self.manager startUpdatingLocation];
+        
+        _currentLocation = [[CLLocation alloc] initWithLatitude:35.619932 longitude:139.7814267];
     }
     
     return self;

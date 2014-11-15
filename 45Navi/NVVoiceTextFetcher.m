@@ -40,7 +40,7 @@ static NSString* const kAPIEndpoint = @"https://api.voicetext.jp/v1/tts";
     NSDictionary *parameters = @{@"text": self.textToSpeak,
                                  @"speaker": @"haruka",
                                  @"emotion" : @"happiness",
-                                 @"emotion_level" : @"2"};
+                                 @"emotion_level" : @"1"};
     
     [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:kAPIKey password:@""];
     
@@ -51,6 +51,7 @@ static NSString* const kAPIEndpoint = @"https://api.voicetext.jp/v1/tts";
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        completionHandler(nil);
     }];
     
     operation.responseSerializer = [AFHTTPResponseSerializer serializer];

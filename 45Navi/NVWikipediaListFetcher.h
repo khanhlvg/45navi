@@ -16,6 +16,6 @@
 
 - (instancetype)initWithLocation:(CLLocation *)location;
 
-- (void)startFetchingWithCompletionHandler:(void (^)(NVPlaceEntity *result))completionHandler;
+- (void)startFetchingWithCompletionHandler:(void (^)(NSArray *result))completionHandler;
 
 @end

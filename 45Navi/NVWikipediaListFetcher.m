@@ -35,18 +35,35 @@ static NSString *const kBaseURL = @"http://ja.wikipedia.org/w/api.php";
     
 }
 
-- (void)startFetchingWithCompletionHandler:(void (^)(NVPlaceEntity *result))completionHandler;
+- (void)startFetchingWithCompletionHandler:(void (^)(NSArray *result))completionHandler
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     
     [manager GET:kBaseURL parameters:[self.class queryParameterWithCentreLocation:self.myLocation] success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
+        NSMutableArray *resultList = [NSMutableArray new];
+        
         NSDictionary *responeDict = responseObject;
-        NSLog(@"%@", responeDict);
+        NSDictionary *pages = responeDict[@"query"][@"pages"];
+        
+        for (NSDictionary *item in pages.allValues) {
+            NVPlaceEntity *entity = [[NVPlaceEntity alloc] init];
+            entity.location = [[CLLocation alloc] initWithLatitude:[item[@"coordinates"][0][@"lat"] floatValue]
+                                                         longitude:[item[@"coordinates"][0][@"lon"] floatValue]];
+            entity.placeName = item[@"title"];
+            
+            entity.imageURL = item[@"thumbnail"][@"source"];
+            
+            [resultList addObject:entity];
+            NSLog(@"Title = %@", entity.placeName);
+        }
+        
+        completionHandler([NSArray arrayWithArray:resultList]);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        NSLog(@"Error: %@", error);
+        completionHandler(nil);
     }];
 }
 
@@ -72,7 +89,7 @@ static NSString *const kBaseURL = @"http://ja.wikipedia.org/w/api.php";
     [param setObject:@"150" forKey:@"pithumbsize"];
     [param setObject:@"50" forKey:@"pilimit"];
     [param setObject:@"geosearch" forKey:@"generator"];
-    [param setObject:@"1000" forKey:@"ggsradius"];
+    [param setObject:@"3000" forKey:@"ggsradius"];
     [param setObject:@"0" forKey:@"ggsnamespace"];
     [param setObject:@"50" forKey:@"ggslimit"];
     [param setObject:[NSString stringWithFormat:@"%f|%f",
