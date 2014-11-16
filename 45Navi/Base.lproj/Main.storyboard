@@ -51,6 +51,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="309" id="tz3-r9-ifl"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="xXR-fT-rDc" id="bSC-eQ-cA5"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

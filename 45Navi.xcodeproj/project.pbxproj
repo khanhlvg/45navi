@@ -553,9 +553,11 @@
 			baseConfigurationReference = F387E32E358A24FC24796D38 /* Pods-45Navi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = 45Navi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "BFDC2589-1DC1-4D24-A3B1-7CC09770B8B4";
 			};
 			name = Debug;
 		};
