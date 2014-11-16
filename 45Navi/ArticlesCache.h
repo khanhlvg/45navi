@@ -10,5 +10,6 @@
 
 @interface ArticlesCache : NSObject
 @property NSArray* articles;
+@property NSInteger selectedIndex;
 + (ArticlesCache*)sharedInstance;
 @end
