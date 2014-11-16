@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface ArticlesCache : NSObject
+
 @property NSArray* articles;
 @property NSInteger selectedIndex;
+@property NSMutableArray* visitedIndexList;
+
 + (ArticlesCache*)sharedInstance;
+
 @end

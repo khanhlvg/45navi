@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *dialogBlurImageView;
 @property (weak, nonatomic) IBOutlet UILabel *explainationLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *goalPicture;
+@property (nonatomic) BOOL isMyEntityDisplayed;
 
 @property (nonatomic) NVPlaceEntity *entity;
 
@@ -40,6 +41,13 @@
     NSArray* articleCaches = [[ArticlesCache sharedInstance] articles];
     self.entity = [articleCaches objectAtIndex:[[ArticlesCache sharedInstance] selectedIndex]];
     [self setupWithEntity:self.entity];
+    
+    NSNumber *myEntityIndex = [NSNumber numberWithInteger:[[ArticlesCache sharedInstance] selectedIndex]];
+    self.isMyEntityDisplayed = [[[ArticlesCache sharedInstance] visitedIndexList] containsObject:myEntityIndex];
+    
+    if (!self.isMyEntityDisplayed) {
+        [[[ArticlesCache sharedInstance] visitedIndexList] addObject:myEntityIndex];
+    }
 }
 
 //- (void)viewWillAppear:(BOOL)animated
@@ -64,7 +72,10 @@
     NSURL *url = [NSURL URLWithString:entity.imageURL];
     [self.goalPicture setImageWithURL:url];
     
-    [[NVVoiceTextService sharedInstance] readText:entity.explanation];
+    if (!self.isMyEntityDisplayed) {
+        [[NVVoiceTextService sharedInstance] readText:entity.explanation];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

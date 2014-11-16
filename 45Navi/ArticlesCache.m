@@ -20,6 +20,17 @@
   return sharedInstance;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self) {
+        self.visitedIndexList = [NSMutableArray new];
+    }
+    
+    return self;
+}
+
 
 
 @end

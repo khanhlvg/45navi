@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pYi-wu-daH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pYi-wu-daH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -50,7 +50,7 @@
         <!--Article View Controller-->
         <scene sceneID="bVw-UX-Ic2">
             <objects>
-                <viewController id="Msw-yB-XyE" customClass="ArticleViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticleViewController" id="Msw-yB-XyE" customClass="ArticleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jjQ-3X-tif"/>
                         <viewControllerLayoutGuide type="bottom" id="4lm-93-05W"/>
@@ -89,13 +89,13 @@
                                     <outlet property="delegate" destination="xXR-fT-rDc" id="bSC-eQ-cA5"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WU-vF-5wq">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WU-vF-5wq">
                                 <rect key="frame" x="85" y="520" width="150" height="40"/>
                                 <state key="normal" image="btn3.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dxK-lQ-aOW" kind="modal" id="LhR-mw-8CF"/>
+                                    <action selector="clickArrivedBtn:" destination="xXR-fT-rDc" eventType="touchUpInside" id="PFK-6K-4yS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,6 +107,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="arrivedButton" destination="7WU-vF-5wq" id="isT-57-2Ed"/>
                         <outlet property="mapView" destination="nxu-EK-7Et" id="8tM-hl-Kxs"/>
                     </connections>
                 </viewController>
@@ -117,7 +118,7 @@
         <!--Goal View Controller-->
         <scene sceneID="JOh-Qf-MGA">
             <objects>
-                <viewController id="dxK-lQ-aOW" customClass="GoalViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoalViewController" id="dxK-lQ-aOW" customClass="GoalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tZ4-Gk-KKf"/>
                         <viewControllerLayoutGuide type="bottom" id="UaU-aI-gZR"/>

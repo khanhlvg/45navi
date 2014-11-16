@@ -89,7 +89,7 @@ static NSString *const kBaseURL = @"http://ja.wikipedia.org/w/api.php";
     [param setObject:@"json" forKey:@"format"];
     [param setObject:@"max" forKey:@"colimit"];
     [param setObject:@"pageimages|coordinates" forKey:@"prop"];
-    [param setObject:@"150" forKey:@"pithumbsize"];
+    [param setObject:@"320" forKey:@"pithumbsize"];
     [param setObject:@"50" forKey:@"pilimit"];
     [param setObject:@"geosearch" forKey:@"generator"];
     [param setObject:@"3000" forKey:@"ggsradius"];

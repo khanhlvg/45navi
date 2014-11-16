@@ -16,6 +16,8 @@
 @interface NavigationViewController ()
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIButton *arrivedButton;
+@property (nonatomic) BOOL isMyEntityDisplayed;
 
 @end
 
@@ -68,7 +70,34 @@
     
     if (self.entity) {
         [self setupWithEntity:self.entity];
+        NSNumber *myEntityIndex = [NSNumber numberWithInteger:[[ArticlesCache sharedInstance] selectedIndex]];
+        self.isMyEntityDisplayed = [[[ArticlesCache sharedInstance] visitedIndexList] containsObject:myEntityIndex];
     }
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.arrivedButton.hidden = NO;
+    });
+}
+
+- (IBAction)clickArrivedBtn:(id)sender {
+    UIViewController *vc;
+    
+    if (self.isMyEntityDisplayed) {
+        vc =
+        [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"ArticleViewController"];
+        
+    } else {
+        vc =
+        [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"GoalViewController"];
+    }
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
