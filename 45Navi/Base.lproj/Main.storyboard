@@ -165,6 +165,7 @@
         <image name="star2.png" width="217" height="38"/>
         <image name="star3.png" width="217" height="38"/>
         <image name="text1.png" width="200" height="79"/>
+        <image name="ヒマGoal.png" width="640" height="300"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
