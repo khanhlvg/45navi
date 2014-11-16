@@ -10,6 +10,7 @@
 
 @interface GoalViewController ()
 @property (weak, nonatomic) IBOutlet UIView *reviewDialog;
+@property (weak, nonatomic) IBOutlet UIImageView *dialogBlurImageView;
 
 @end
 
@@ -18,6 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+  UIBlurEffect * blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+  UIVisualEffectView * visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+  visualEffectView.frame = _dialogBlurImageView.bounds;
+  [_dialogBlurImageView addSubview:visualEffectView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +40,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)reviewOpen:(id)sender {
+  _reviewDialog.hidden = NO;
+}
+
 - (IBAction)review1Star:(id)sender {
   _reviewDialog.hidden = YES;
 }
