@@ -119,7 +119,10 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
     }else{
-    
+      loadedCards = [[NSMutableArray alloc] init];
+      allCards = [[NSMutableArray alloc] init];
+      cardsLoadedIndex = 0;
+      [self loadCards];
     }
 }
 
