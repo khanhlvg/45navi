@@ -88,7 +88,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D59-0W-gIn">
                                 <rect key="frame" x="16" y="436" width="105" height="30"/>
-                                <state key="normal" title="元の場所に戻る">
+                                <state key="normal" image="btn4.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -97,7 +97,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHq-d7-q4f">
                                 <rect key="frame" x="241" y="436" width="30" height="30"/>
-                                <state key="normal" title="遊ぶ">
+                                <state key="normal" image="btn5.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -115,16 +115,15 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GQ-sv-41P">
                                         <rect key="frame" x="94" y="244" width="75" height="30"/>
-                                        <state key="normal" title="価値なし☆">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" image="star1.png"/>
                                         <connections>
                                             <action selector="review1Star:" destination="dxK-lQ-aOW" eventType="touchUpInside" id="ZGO-6f-J9c"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMP-Ou-lkC">
                                         <rect key="frame" x="71" y="309" width="120" height="30"/>
-                                        <state key="normal" title="時間は潰せる☆☆">
+                                        <state key="normal" image="star2.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -133,20 +132,25 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7IU-XO-LTB">
                                         <rect key="frame" x="71" y="370" width="120" height="30"/>
-                                        <state key="normal" title="面白い！！☆☆☆">
+                                        <state key="normal" image="star3.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="review3Stars:" destination="dxK-lQ-aOW" eventType="touchUpInside" id="Uyd-yh-Y8J"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="text1.png" id="Bwh-NJ-B9b">
+                                        <rect key="frame" x="60" y="152" width="200" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="dialogBlurImageView" destination="zb6-e3-k9A" id="UvG-9b-u9L"/>
                         <outlet property="reviewDialog" destination="WTf-XC-PIT" id="aZP-Y6-S5D"/>
                     </connections>
                 </viewController>
@@ -157,6 +161,10 @@
     </scenes>
     <resources>
         <image name="sample3.png" width="438" height="338"/>
+        <image name="star1.png" width="217" height="38"/>
+        <image name="star2.png" width="217" height="38"/>
+        <image name="star3.png" width="217" height="38"/>
+        <image name="text1.png" width="200" height="79"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
