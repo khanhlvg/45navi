@@ -7,16 +7,20 @@
 //
 
 #import "ArticleImageFactory.h"
+#import "AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation ArticleImageFactory
 
-+(UIImage*)imageMake:(NSString*)title image:(UIImage*)img{
++(UIImage*)imageMake:(NSString*)title image:(NSString*)imgUrl{
 
   UIView* tmp = [[UIView alloc]initWithFrame:(CGRect){0,0,CARD_WIDTH,CARD_HEIGHT}];
   UIImageView* imgView = [[UIImageView alloc]initWithFrame:(CGRect){0,0,CARD_WIDTH,CARD_HEIGHT - 100}];
-  imgView.image = img;
+  NSURL *url = [NSURL URLWithString:imgUrl];
+  imgView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];//todo sync->async
   [tmp addSubview:imgView];
   UILabel* titleLabel = [[UILabel alloc]initWithFrame:(CGRect){30,CARD_HEIGHT - 100,CARD_WIDTH-60,100}];
+  titleLabel.numberOfLines=3;
   titleLabel.text = title;
   [tmp addSubview:titleLabel];
   

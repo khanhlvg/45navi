@@ -39,6 +39,7 @@
                         <color key="backgroundColor" red="0.31165612678363885" green="0.75582899913957036" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="startBtn" destination="WRc-zR-WDx" id="nwg-QL-5gu"/>
                         <outlet property="startSpinner" destination="mdP-q9-SD6" id="1rw-tJ-3JW"/>
                     </connections>
                 </viewController>
