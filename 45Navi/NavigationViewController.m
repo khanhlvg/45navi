@@ -11,6 +11,7 @@
 #import "NVPlaceEntity.h"
 #import "NVWikipediaListFetcher.h"
 #import "NVLocationManager.h"
+#import "ArticlesCache.h"
 
 @interface NavigationViewController ()
 
@@ -52,13 +53,16 @@
     // Do any additional setup after loading the view.
     
     // ==== test code ====
-    NVLocationManager *locationManager = [NVLocationManager sharedInstance];
-    NVWikipediaListFetcher *wikiFetcher = [[NVWikipediaListFetcher alloc] initWithLocation:locationManager.currentLocation];
-    
-    [wikiFetcher startFetchingWithCompletionHandler:^(NSArray *result) {
-        [self setupWithEntity:[result lastObject]];
-    }];
+//    NVLocationManager *locationManager = [NVLocationManager sharedInstance];
+//    NVWikipediaListFetcher *wikiFetcher = [[NVWikipediaListFetcher alloc] initWithLocation:locationManager.currentLocation];
+//    
+//    [wikiFetcher startFetchingWithCompletionHandler:^(NSArray *result) {
+//        [self setupWithEntity:[result lastObject]];
+//    }];
     // ==== end test code ====
+    
+    NSArray* articleCaches = [[ArticlesCache sharedInstance] articles];
+    self.entity = [articleCaches objectAtIndex:[[ArticlesCache sharedInstance] selectedIndex]];
     
     self.mapView.showsUserLocation = YES;
     

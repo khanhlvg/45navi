@@ -13,11 +13,15 @@
 #import "NVLocationManager.h"
 #import "NVVoiceTextService.h"
 
+#import "ArticlesCache.h"
+
 @interface GoalViewController ()
 @property (weak, nonatomic) IBOutlet UIView *reviewDialog;
 @property (weak, nonatomic) IBOutlet UIImageView *dialogBlurImageView;
 @property (weak, nonatomic) IBOutlet UILabel *explainationLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *goalPicture;
+
+@property (nonatomic) NVPlaceEntity *entity;
 
 @end
 
@@ -31,18 +35,23 @@
   UIVisualEffectView * visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
   visualEffectView.frame = _dialogBlurImageView.bounds;
   [_dialogBlurImageView addSubview:visualEffectView];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    NVLocationManager *locationManager = [NVLocationManager sharedInstance];
     
-    NVEventDataFetcher *eventFetcher = [[NVEventDataFetcher alloc] initWithLocation:locationManager.currentLocation];
-    [eventFetcher startFetchingWithCompletionHandler:^(NSArray *result) {
-        [self setupWithEntity:[result lastObject]];
-    }];
-
+    // setup entity
+    NSArray* articleCaches = [[ArticlesCache sharedInstance] articles];
+    self.entity = [articleCaches objectAtIndex:[[ArticlesCache sharedInstance] selectedIndex]];
+    [self setupWithEntity:self.entity];
 }
+
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    NVLocationManager *locationManager = [NVLocationManager sharedInstance];
+//    
+//    NVEventDataFetcher *eventFetcher = [[NVEventDataFetcher alloc] initWithLocation:locationManager.currentLocation];
+//    [eventFetcher startFetchingWithCompletionHandler:^(NSArray *result) {
+//        [self setupWithEntity:[result lastObject]];
+//    }];
+//
+//}
 
 - (void)setupWithEntity:(NVPlaceEntity *)entity
 {
