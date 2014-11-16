@@ -126,7 +126,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sample3.png" translatesAutoresizingMaskIntoConstraints="NO" id="Itf-JK-F0O">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sample.png" translatesAutoresizingMaskIntoConstraints="NO" id="Itf-JK-F0O">
                                 <rect key="frame" x="0.0" y="18" width="320" height="281"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goal.png" translatesAutoresizingMaskIntoConstraints="NO" id="kaP-cC-4XV">
@@ -227,7 +227,7 @@
         <image name="goal.png" width="640" height="300"/>
         <image name="logo1.png" width="322" height="190"/>
         <image name="logo3.png" width="567" height="387"/>
-        <image name="sample3.png" width="438" height="338"/>
+        <image name="sample.png" width="256" height="256"/>
         <image name="star1.png" width="217" height="38"/>
         <image name="star2.png" width="217" height="38"/>
         <image name="star3.png" width="217" height="38"/>

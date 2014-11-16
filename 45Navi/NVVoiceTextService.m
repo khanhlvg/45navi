@@ -32,6 +32,9 @@
 
 - (void)readText:(NSString *)text
 {
+    if (!text)
+        return;
+    
     NVVoiceTextFetcher *fetcher = [[NVVoiceTextFetcher alloc] initWithText:text];
     [fetcher startFetchingWithCompletionHandler:^(NSData *wavData) {
         NSError *error = nil;
