@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Boot View Controller-->
         <scene sceneID="ykz-oL-LPL">
             <objects>
-                <viewController id="pYi-wu-daH" sceneMemberID="viewController">
+                <viewController id="pYi-wu-daH" customClass="BootViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZC5-9w-qbm"/>
                         <viewControllerLayoutGuide type="bottom" id="OP0-rr-Tll"/>
@@ -18,10 +18,11 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRc-zR-WDx">
                                 <rect key="frame" x="85" y="508" width="150" height="40"/>
-                                <state key="normal" image="btn1.png">
+                                <state key="normal" image="btn0.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="startBtnPushed:" destination="pYi-wu-daH" eventType="touchUpInside" id="sEW-rD-iYk"/>
                                     <segue destination="Msw-yB-XyE" kind="modal" id="0pE-X1-f2L"/>
                                 </connections>
                             </button>
@@ -31,9 +32,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo3.png" translatesAutoresizingMaskIntoConstraints="NO" id="EMr-Mf-RJE">
                                 <rect key="frame" x="46" y="239" width="258" height="188"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="mdP-q9-SD6">
+                                <rect key="frame" x="150" y="518" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.31165612678363885" green="0.75582899913957036" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="startSpinner" destination="mdP-q9-SD6" id="1rw-tJ-3JW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xue-0h-sYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,10 +79,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nxu-EK-7Et">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nxu-EK-7Et">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="309" id="tz3-r9-ifl"/>
+                                    <constraint firstAttribute="height" constant="568" id="tz3-r9-ifl"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="xXR-fT-rDc" id="bSC-eQ-cA5"/>
@@ -160,7 +167,9 @@
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTf-XC-PIT">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cNy-id-UUo"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cNy-id-UUo">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="text1.png" id="Bwh-NJ-B9b">
                                         <rect key="frame" x="60" y="116" width="200" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -207,7 +216,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btn1.png" width="150" height="40"/>
+        <image name="btn0.png" width="150" height="40"/>
         <image name="btn3.png" width="150" height="40"/>
         <image name="btn4.png" width="150" height="40"/>
         <image name="btn5.png" width="150" height="40"/>
@@ -227,7 +236,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="wJ4-pN-Wer"/>
         <segue reference="0pE-X1-f2L"/>
-        <segue reference="3Of-hk-AKL"/>
     </inferredMetricsTieBreakers>
 </document>

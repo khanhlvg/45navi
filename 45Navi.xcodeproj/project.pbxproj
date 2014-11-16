@@ -27,6 +27,9 @@
 		849DBC971A18492A00952FD8 /* logo1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849DBC951A18492A00952FD8 /* logo1@2x.png */; };
 		849DBC991A184A3500952FD8 /* logo3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849DBC981A184A3500952FD8 /* logo3@2x.png */; };
 		849DBC9B1A18518700952FD8 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849DBC9A1A18518700952FD8 /* splash@2x.png */; };
+		849DBC9E1A18595500952FD8 /* BootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849DBC9D1A18595500952FD8 /* BootViewController.m */; };
+		849DBCA11A185AEE00952FD8 /* ArticlesCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 849DBCA01A185AEE00952FD8 /* ArticlesCache.m */; };
+		849DBCA31A185D5900952FD8 /* btn0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 849DBCA21A185D5900952FD8 /* btn0@2x.png */; };
 		84A9166B1A177488003FE98E /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A916641A177488003FE98E /* ArticleViewController.m */; };
 		84A9166C1A177488003FE98E /* DraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A916661A177488003FE98E /* DraggableView.m */; };
 		84A9166D1A177488003FE98E /* DraggableViewBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A916681A177488003FE98E /* DraggableViewBackground.m */; };
@@ -86,6 +89,11 @@
 		849DBC951A18492A00952FD8 /* logo1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo1@2x.png"; sourceTree = "<group>"; };
 		849DBC981A184A3500952FD8 /* logo3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo3@2x.png"; sourceTree = "<group>"; };
 		849DBC9A1A18518700952FD8 /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash@2x.png"; sourceTree = "<group>"; };
+		849DBC9C1A18595500952FD8 /* BootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BootViewController.h; sourceTree = "<group>"; };
+		849DBC9D1A18595500952FD8 /* BootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BootViewController.m; sourceTree = "<group>"; };
+		849DBC9F1A185AEE00952FD8 /* ArticlesCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesCache.h; sourceTree = "<group>"; };
+		849DBCA01A185AEE00952FD8 /* ArticlesCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesCache.m; sourceTree = "<group>"; };
+		849DBCA21A185D5900952FD8 /* btn0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn0@2x.png"; sourceTree = "<group>"; };
 		84A916631A177488003FE98E /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
 		84A916641A177488003FE98E /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
 		84A916651A177488003FE98E /* DraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableView.h; sourceTree = "<group>"; };
@@ -151,6 +159,10 @@
 		84A9166F1A179CDF003FE98E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				849DBC9F1A185AEE00952FD8 /* ArticlesCache.h */,
+				849DBCA01A185AEE00952FD8 /* ArticlesCache.m */,
+				849DBC9C1A18595500952FD8 /* BootViewController.h */,
+				849DBC9D1A18595500952FD8 /* BootViewController.m */,
 				84A916721A17A5AD003FE98E /* ArticleImageFactory.h */,
 				84A916731A17A5AD003FE98E /* ArticleImageFactory.m */,
 				84A916631A177488003FE98E /* ArticleViewController.h */,
@@ -165,6 +177,7 @@
 				844AE28A1A17AFFF00D5632E /* sample2.png */,
 				844AE28C1A17BB3200D5632E /* sample3.png */,
 				849DBC921A183FE600952FD8 /* sample4.jpg */,
+				849DBCA21A185D5900952FD8 /* btn0@2x.png */,
 				849DBC7D1A18268700952FD8 /* btn1@2x.png */,
 				849DBC7C1A18268700952FD8 /* btn2@2x.png */,
 				849DBC801A18294100952FD8 /* btn3@2x.png */,
@@ -408,6 +421,7 @@
 				849DBC8C1A18383B00952FD8 /* btn4@2x.png in Resources */,
 				D40553A31A17336C000C0588 /* Main.storyboard in Resources */,
 				D40553A81A17336C000C0588 /* LaunchScreen.xib in Resources */,
+				849DBCA31A185D5900952FD8 /* btn0@2x.png in Resources */,
 				844AE28B1A17AFFF00D5632E /* sample2.png in Resources */,
 				849DBC991A184A3500952FD8 /* logo3@2x.png in Resources */,
 				849DBC8F1A183BF200952FD8 /* btn6@2x.png in Resources */,
@@ -476,9 +490,11 @@
 			files = (
 				D4A2B8D81A177B3700E43513 /* NVWikipediaListFetcher.m in Sources */,
 				D4F697F11A1850C2000AB5DB /* NVEventDataFetcher.m in Sources */,
+				849DBC9E1A18595500952FD8 /* BootViewController.m in Sources */,
 				D43EC93D1A179C4F0084BD68 /* NVPlaceEntity.m in Sources */,
 				84A9166D1A177488003FE98E /* DraggableViewBackground.m in Sources */,
 				D4A2B8DB1A177B4000E43513 /* NVLocationManager.m in Sources */,
+				849DBCA11A185AEE00952FD8 /* ArticlesCache.m in Sources */,
 				D40553971A17336C000C0588 /* AppDelegate.m in Sources */,
 				844AE2901A1816C400D5632E /* GoalViewController.m in Sources */,
 				84A9166E1A177488003FE98E /* OverlayView.m in Sources */,
