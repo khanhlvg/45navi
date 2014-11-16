@@ -39,8 +39,9 @@
     [wikiFetcher startFetchingWithCompletionHandler:^(NSArray *result2) {
       [ArticlesCache sharedInstance].articles = [result2 arrayByAddingObjectsFromArray:result];
       [_startSpinner stopAnimating];
-      _startSpinner.hidden = YES;
-      _startBtn.imageView.image =[UIImage imageNamed:@"btn1.png"];
+//      _startSpinner.hidden = YES;
+//      _startBtn.imageView.image =[UIImage imageNamed:@"btn1.png"];
+      [self performSegueWithIdentifier:@"gotoArticleSegue" sender:self];
       
     }];
   }];
