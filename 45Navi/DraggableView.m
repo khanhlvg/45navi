@@ -160,7 +160,7 @@
                          [self removeFromSuperview];
                      }];
     
-    [delegate cardSwipedRight:self];
+    [delegate cardSwipedLeft:self];
     
     NSLog(@"YES");
 }

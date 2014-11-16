@@ -67,8 +67,11 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
 -(DraggableView *)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
     DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2-30, CARD_WIDTH, CARD_HEIGHT)];
-    
-  draggableView.content.image = [ArticleImageFactory imageMake:@"テレコムセンター" image:[UIImage imageNamed:@"sample.png"]] ;
+  if(index ==0){
+  draggableView.content.image = [ArticleImageFactory imageMake:@"テレコムセンター" image:[UIImage imageNamed:@"sample3.png"]] ;
+  }else{
+    draggableView.content.image = [ArticleImageFactory imageMake:@"パレットタウン" image:[UIImage imageNamed:@"sample4.jpg"]] ;
+  }
   //[exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
     draggableView.delegate = self;
     return draggableView;
