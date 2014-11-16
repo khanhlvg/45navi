@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pYi-wu-daH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pYi-wu-daH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -23,7 +23,6 @@
                                 </state>
                                 <connections>
                                     <action selector="startBtnPushed:" destination="pYi-wu-daH" eventType="touchUpInside" id="sEW-rD-iYk"/>
-                                    <segue destination="Msw-yB-XyE" kind="modal" id="0pE-X1-f2L"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo1.png" translatesAutoresizingMaskIntoConstraints="NO" id="d1t-CH-Xcv">
@@ -41,6 +40,7 @@
                     <connections>
                         <outlet property="startBtn" destination="WRc-zR-WDx" id="nwg-QL-5gu"/>
                         <outlet property="startSpinner" destination="mdP-q9-SD6" id="1rw-tJ-3JW"/>
+                        <segue destination="Msw-yB-XyE" kind="modal" identifier="gotoArticleSegue" id="HYc-KI-mqf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xue-0h-sYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -239,7 +239,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wJ4-pN-Wer"/>
-        <segue reference="d6g-DG-wx1"/>
+        <segue reference="HYc-KI-mqf"/>
+        <segue reference="3Of-hk-AKL"/>
     </inferredMetricsTieBreakers>
 </document>
