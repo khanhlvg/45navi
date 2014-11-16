@@ -17,6 +17,9 @@
 @interface NVWikipediaListFetcher ()
 
 @property (nonatomic) CLLocation *myLocation;
+@property (nonatomic,copy) void (^completionHandler)(NSArray *result);
+@property (nonatomic) NSArray *resultList;
+@property (nonatomic) NSUInteger remainingRouteFetchCount;
 
 @end
 
@@ -40,8 +43,12 @@ static NSString *const kBaseURL = @"http://ja.wikipedia.org/w/api.php";
 
 - (void)startFetchingWithCompletionHandler:(void (^)(NSArray *result))completionHandler
 {
+    self.completionHandler = completionHandler;
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    __typeof__(self) __weak weakSelf = self;
     
     [manager GET:kBaseURL parameters:[self.class queryParameterWithCentreLocation:self.myLocation] success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -64,7 +71,9 @@ static NSString *const kBaseURL = @"http://ja.wikipedia.org/w/api.php";
 //            NSLog(@"Title = %@", entity.placeName);
         }
         
-        completionHandler([NSArray arrayWithArray:resultList]);
+        /*completionHandler([NSArray arrayWithArray:resultList]);*/
+        weakSelf.resultList = resultList;
+        [weakSelf startALLRouteFetcher];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -133,6 +142,8 @@ static NSString *const kBaseURL = @"http://ja.wikipedia.org/w/api.php";
         request.transportType = MKDirectionsTransportTypeWalking;
     }
     
+    //__typeof__(self) __weak weakSelf = self;
+    
     MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
     
     [directions calculateDirectionsWithCompletionHandler:
@@ -143,8 +154,27 @@ static NSString *const kBaseURL = @"http://ja.wikipedia.org/w/api.php";
             entity.route = [response.routes lastObject];
             NSLog(@"%@ - %@",entity.placeName, entity.transitString);
          }
+         
+         [self finishONERouteFetcherAndConsiderCallCompletionHandler];
+         
      }];
-    return nil;
+    return entity;
+}
+
+- (void)startALLRouteFetcher
+{
+    self.remainingRouteFetchCount = [self.resultList count];
+}
+
+- (void)finishONERouteFetcherAndConsiderCallCompletionHandler
+{
+    self.remainingRouteFetchCount--;
+    
+    if (self.remainingRouteFetchCount == 0) {
+        if (self.completionHandler) {
+            self.completionHandler([NSArray arrayWithArray:self.resultList]);
+        }
+    }
 }
 
 @end

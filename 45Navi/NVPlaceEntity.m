@@ -54,4 +54,14 @@
     return NVTransitTypeByFoot;
 }
 
+- (CLLocationCoordinate2D)coordinate
+{
+    return self.location.coordinate;
+}
+
+- (NSString *)title
+{
+    return self.placeName;
+}
+
 @end

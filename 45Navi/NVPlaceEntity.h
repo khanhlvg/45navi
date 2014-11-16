@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 @class CLLocation;
-@class MKRoute;
 
 typedef NS_ENUM(NSInteger, NVTransitType) {
     NVTransitTypeByTrain,
     NVTransitTypeByFoot
 };
 
-@interface NVPlaceEntity : NSObject
+@interface NVPlaceEntity : NSObject <MKAnnotation>
 
 /*
  @abstract 行き先の名前

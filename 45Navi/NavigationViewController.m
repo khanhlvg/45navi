@@ -7,16 +7,58 @@
 //
 
 #import "NavigationViewController.h"
+#import <MapKit/MapKit.h>
+#import "NVPlaceEntity.h"
+#import "NVWikipediaListFetcher.h"
+#import "NVLocationManager.h"
 
 @interface NavigationViewController ()
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
 @implementation NavigationViewController
 
+- (void)setupWithEntity:(NVPlaceEntity *)entity
+{
+//    NVLocationManager *locationManager = [NVLocationManager sharedInstance];
+    
+    [self.mapView addAnnotation:entity];
+    
+    if (entity.route) {
+        [self.mapView addOverlay:entity.route.polyline level:MKOverlayLevelAboveRoads];
+    }
+    
+}
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
+{
+    MKPolylineRenderer *renderer =
+    [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+    renderer.strokeColor = [UIColor blueColor];
+    renderer.lineWidth = 5.0;
+    return renderer;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // ==== test code ====
+    NVLocationManager *locationManager = [NVLocationManager sharedInstance];
+    NVWikipediaListFetcher *wikiFetcher = [[NVWikipediaListFetcher alloc] initWithLocation:locationManager.currentLocation];
+    
+    [wikiFetcher startFetchingWithCompletionHandler:^(NSArray *result) {
+        [self setupWithEntity:[result lastObject]];
+    }];
+    // ==== end test code ====
+    
+    self.mapView.showsUserLocation = YES;
+    
+    if (self.entity) {
+        [self setupWithEntity:self.entity];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

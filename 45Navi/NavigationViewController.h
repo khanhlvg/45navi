@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface NavigationViewController : UIViewController
+@class NVPlaceEntity;
+
+@interface NavigationViewController : UIViewController <MKMapViewDelegate>
+
+@property (nonatomic) NVPlaceEntity *entity;
+
+- (void)setupWithEntity:(NVPlaceEntity *)entity;
 
 @end

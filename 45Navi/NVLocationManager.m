@@ -40,6 +40,7 @@
         self.manager = [[CLLocationManager alloc] init];
         self.manager.delegate = self;
         self.manager.desiredAccuracy = kCLLocationAccuracyBest;
+        [self.manager requestWhenInUseAuthorization];
         [self.manager startUpdatingLocation];
         
         _currentLocation = [[CLLocation alloc] initWithLatitude:35.619932 longitude:139.7814267];
