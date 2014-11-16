@@ -37,7 +37,13 @@
   NVEventDataFetcher *eventFetcher = [[NVEventDataFetcher alloc] initWithLocation:locationManager.currentLocation];
   [eventFetcher startFetchingWithCompletionHandler:^(NSArray *result) {
     [wikiFetcher startFetchingWithCompletionHandler:^(NSArray *result2) {
-      [ArticlesCache sharedInstance].articles = [result arrayByAddingObjectsFromArray:result2];
+      if([result2 count]>2){
+        NSArray *tmp = [NSArray arrayWithObjects:result2[0],result2[1],nil];
+        [ArticlesCache sharedInstance].articles = [tmp arrayByAddingObjectsFromArray:[result arrayByAddingObjectsFromArray:result2]];
+        
+      }else{
+        [ArticlesCache sharedInstance].articles = [result arrayByAddingObjectsFromArray:result2];
+      }
       [_startSpinner stopAnimating];
 //      _startSpinner.hidden = YES;
 //      _startBtn.imageView.image =[UIImage imageNamed:@"btn1.png"];
