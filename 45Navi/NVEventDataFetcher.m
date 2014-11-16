@@ -57,9 +57,17 @@ static NSString* const kAPIEndpoint = @"http://navi45.cloudapp.net/api/v1/events
             NVPlaceEntity *entity = [[NVPlaceEntity alloc] init];
 //            entity.location = [[CLLocation alloc] initWithLatitude:[item[@"coordinates"][0][@"lat"] floatValue]
 //                                                         longitude:[item[@"coordinates"][0][@"lon"] floatValue]];
-//            entity.placeName = item[@"title"];
-//            
-//            entity.imageURL = item[@"thumbnail"][@"source"];
+
+            NSArray *coordinateArray = [((NSString *)item[@"location"]) componentsSeparatedByString:@","];
+            
+            if ([coordinateArray count] == 2) {
+                entity.location = [[CLLocation alloc] initWithLatitude:[coordinateArray[0] floatValue]
+                                                             longitude:[coordinateArray[1] floatValue]];
+            }
+            
+            entity.imageURL = item[@"image_url"];
+            entity.placeName = item[@"title"];
+            entity.explanation = item[@"desc"];
             
             [self processRouteForPlaceEntity:entity];
             
