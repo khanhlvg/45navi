@@ -36,8 +36,7 @@
     }];
     
     NVVoiceTextService *voiceService = [NVVoiceTextService sharedInstance];
-    [voiceService readText:@"実際のカヤックやカヌーに搭乗し、それを操作することで船の基本や知識を学ぶための施設。"
-     "2008年シーズンまでは、遊泳プールとして毎年営業していた。現地案内板には「シーサイドプール」と表記はそのままだが、公式サイトは「体験教室プール」に変更されている。"];
+    [voiceService readText:@"日本初の格闘技専用アリーナと銘打ち、2000年にオープンした。プロレス団体の一つである、プロレスリング・ノアが事務所、道場、合宿所を置いている。"];
 }
 
 -(void)gotoNavigation{

@@ -35,6 +35,7 @@
 		D4F697EA1A17BE6F000AB5DB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F697E91A17BE6F000AB5DB /* CoreLocation.framework */; };
 		D4F697EC1A17BE74000AB5DB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F697EB1A17BE74000AB5DB /* MapKit.framework */; };
 		D4F697EE1A17BE7C000AB5DB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F697ED1A17BE7C000AB5DB /* AVFoundation.framework */; };
+		D4F697F11A1850C2000AB5DB /* NVEventDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F697F01A1850C2000AB5DB /* NVEventDataFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		D4F697E91A17BE6F000AB5DB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D4F697EB1A17BE74000AB5DB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D4F697ED1A17BE7C000AB5DB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D4F697EF1A1850C2000AB5DB /* NVEventDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVEventDataFetcher.h; sourceTree = "<group>"; };
+		D4F697F01A1850C2000AB5DB /* NVEventDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVEventDataFetcher.m; sourceTree = "<group>"; };
 		F387E32E358A24FC24796D38 /* Pods-45Navi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-45Navi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-45Navi/Pods-45Navi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +255,8 @@
 				D40553BF1A174F5E000C0588 /* NVVoiceTextFetcher.m */,
 				D4A2B8D61A177B3700E43513 /* NVWikipediaListFetcher.h */,
 				D4A2B8D71A177B3700E43513 /* NVWikipediaListFetcher.m */,
+				D4F697EF1A1850C2000AB5DB /* NVEventDataFetcher.h */,
+				D4F697F01A1850C2000AB5DB /* NVEventDataFetcher.m */,
 			);
 			name = Fetcher;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A2B8D81A177B3700E43513 /* NVWikipediaListFetcher.m in Sources */,
+				D4F697F11A1850C2000AB5DB /* NVEventDataFetcher.m in Sources */,
 				D43EC93D1A179C4F0084BD68 /* NVPlaceEntity.m in Sources */,
 				84A9166D1A177488003FE98E /* DraggableViewBackground.m in Sources */,
 				D4A2B8DB1A177B4000E43513 /* NVLocationManager.m in Sources */,
