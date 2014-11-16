@@ -87,12 +87,20 @@
     double minLat=90.0f, maxLat=-90.0f;
     double minLon=180.0f, maxLon=-180.0f;
     
+    double supLat = 0.005f;
+    double supLon = 0.005f;
+    
     for (id<MKAnnotation> mka in annotations) {
         if ( mka.coordinate.latitude  < minLat ) minLat = mka.coordinate.latitude;
         if ( mka.coordinate.latitude  > maxLat ) maxLat = mka.coordinate.latitude;
         if ( mka.coordinate.longitude < minLon ) minLon = mka.coordinate.longitude;
         if ( mka.coordinate.longitude > maxLon ) maxLon = mka.coordinate.longitude;
     }
+    
+    minLat-=supLat;
+    maxLat+=supLat;
+    minLon-=supLon;
+    maxLon+=supLon;
     
     CLLocationCoordinate2D center = CLLocationCoordinate2DMake((minLat+maxLat)/2.0, (minLon+maxLon)/2.0);
     MKCoordinateSpan span = MKCoordinateSpanMake(maxLat-minLat, maxLon-minLon);
