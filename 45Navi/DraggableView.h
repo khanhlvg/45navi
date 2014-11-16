@@ -48,7 +48,9 @@
 @property (nonatomic, strong)UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic)CGPoint originalPoint;
 @property (nonatomic,strong)OverlayView* overlayView;
-@property (nonatomic,strong)UIImageView* content; //%%% a placeholder for any card-specific information
+@property (nonatomic,strong)UIView* content; //%%% a placeholder for any card-specific information
+
+-(void)setArticle:(UIView*)v;
 
 -(void)leftClickAction;
 -(void)rightClickAction;

@@ -10,5 +10,5 @@
 #import "DraggableViewBackground.h"
 
 @interface ArticleImageFactory : NSObject
-+(UIImage*)imageMake:(NSString*)title image:(UIImage*)img;
++(UIView*)imageMake:(NSString*)title image:(UIImage*)img;
 @end
