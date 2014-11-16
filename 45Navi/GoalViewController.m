@@ -7,10 +7,17 @@
 //
 
 #import "GoalViewController.h"
+#import "NVPlaceEntity.h"
+#import <UIImageView+AFNetworking.h>
+#import "NVEventDataFetcher.h"
+#import "NVLocationManager.h"
+#import "NVVoiceTextService.h"
 
 @interface GoalViewController ()
 @property (weak, nonatomic) IBOutlet UIView *reviewDialog;
 @property (weak, nonatomic) IBOutlet UIImageView *dialogBlurImageView;
+@property (weak, nonatomic) IBOutlet UILabel *explainationLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *goalPicture;
 
 @end
 
@@ -24,6 +31,31 @@
   UIVisualEffectView * visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
   visualEffectView.frame = _dialogBlurImageView.bounds;
   [_dialogBlurImageView addSubview:visualEffectView];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NVLocationManager *locationManager = [NVLocationManager sharedInstance];
+    
+    NVEventDataFetcher *eventFetcher = [[NVEventDataFetcher alloc] initWithLocation:locationManager.currentLocation];
+    [eventFetcher startFetchingWithCompletionHandler:^(NSArray *result) {
+        [self setupWithEntity:[result lastObject]];
+    }];
+
+}
+
+- (void)setupWithEntity:(NVPlaceEntity *)entity
+{
+    if (!entity) {
+        return;
+    }
+    
+    self.explainationLabel.text = entity.explanation;
+    
+    NSURL *url = [NSURL URLWithString:entity.imageURL];
+    [self.goalPicture setImageWithURL:url];
+    
+    [[NVVoiceTextService sharedInstance] readText:entity.explanation];
 }
 
 - (void)didReceiveMemoryWarning {

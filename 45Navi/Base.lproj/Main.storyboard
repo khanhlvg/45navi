@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pYi-wu-daH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pYi-wu-daH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -126,10 +126,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sample3.png" translatesAutoresizingMaskIntoConstraints="NO" id="Itf-JK-F0O">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="281"/>
+                                <rect key="frame" x="0.0" y="18" width="320" height="281"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goal.png" translatesAutoresizingMaskIntoConstraints="NO" id="kaP-cC-4XV">
-                                <rect key="frame" x="40" y="-15" width="240" height="128"/>
+                                <rect key="frame" x="40" y="0.0" width="240" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D59-0W-gIn">
                                 <rect key="frame" x="4" y="520" width="150" height="40"/>
@@ -158,8 +158,8 @@
                                     <action selector="reviewOpen:" destination="dxK-lQ-aOW" eventType="touchUpInside" id="S3E-Pf-gy7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B71-ig-JIF">
-                                <rect key="frame" x="23" y="290" width="274" height="169"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="場所の説明" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B71-ig-JIF">
+                                <rect key="frame" x="23" y="308" width="274" height="150"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.29052734375" green="0.29052734375" blue="0.29052734375" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -207,6 +207,8 @@
                     </view>
                     <connections>
                         <outlet property="dialogBlurImageView" destination="cNy-id-UUo" id="JK3-bd-tg8"/>
+                        <outlet property="explainationLabel" destination="B71-ig-JIF" id="6gA-kI-e0Q"/>
+                        <outlet property="goalPicture" destination="Itf-JK-F0O" id="OUw-Zo-qu0"/>
                         <outlet property="reviewDialog" destination="WTf-XC-PIT" id="aZP-Y6-S5D"/>
                     </connections>
                 </viewController>
@@ -237,6 +239,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="wJ4-pN-Wer"/>
-        <segue reference="0pE-X1-f2L"/>
+        <segue reference="d6g-DG-wx1"/>
     </inferredMetricsTieBreakers>
 </document>
