@@ -11,6 +11,8 @@
 #import "NVPlaceEntity.h"
 #import <AFNetworking.h>
 #import <MapKit/MapKit.h>
+#import "NVLocationManager.h"
+#import <AddressBook/AddressBook.h>
 
 @interface NVWikipediaListFetcher ()
 
@@ -56,10 +58,10 @@ static NSString *const kBaseURL = @"http://ja.wikipedia.org/w/api.php";
             
             entity.imageURL = item[@"thumbnail"][@"source"];
             
-            
+            [self processRouteForPlaceEntity:entity];
             
             [resultList addObject:entity];
-            NSLog(@"Title = %@", entity.placeName);
+//            NSLog(@"Title = %@", entity.placeName);
         }
         
         completionHandler([NSArray arrayWithArray:resultList]);
@@ -94,23 +96,54 @@ static NSString *const kBaseURL = @"http://ja.wikipedia.org/w/api.php";
 
 - (NVPlaceEntity *)processRouteForPlaceEntity:(NVPlaceEntity *)entity
 {
-//    MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
-//    
-//    request.source = [MKMapItem mapItemForCurrentLocation];
-//    
-//    request.destination = _destination;
-//    request.requestsAlternateRoutes = YES;
-//    MKDirections *directions =
-//    [[MKDirections alloc] initWithRequest:request];
-//    
-//    [directions calculateDirectionsWithCompletionHandler:
-//     ^(MKDirectionsResponse *response, NSError *error) {
-//         if (error) {
-//             // Handle Error
-//         } else {
-//             [self showRoute:response];
-//         }
-//     }];
+    // create origin
+    NVLocationManager *locationManager = [NVLocationManager sharedInstance];
+    
+    CLLocationCoordinate2D currentCoords = locationManager.currentLocation.coordinate;
+    
+    NSDictionary *currentAddress = @{
+                              (NSString *)kABPersonAddressStreetKey: @"現在地",
+                              };
+    
+    MKPlacemark *currentPlace = [[MKPlacemark alloc]
+                          initWithCoordinate:currentCoords addressDictionary:currentAddress];
+    
+    // create destination
+    CLLocationCoordinate2D destCoords = entity.location.coordinate;
+    
+    NSDictionary *destAddress = @{
+                                     (NSString *)kABPersonAddressStreetKey: entity.placeName,
+                                     };
+    
+    MKPlacemark *destPlace = [[MKPlacemark alloc]
+                                 initWithCoordinate:destCoords addressDictionary:destAddress];
+    
+    // create Map request
+    MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
+    
+    request.source = [[MKMapItem alloc] initWithPlacemark:currentPlace];
+    request.destination = [[MKMapItem alloc] initWithPlacemark:destPlace];
+    
+    request.requestsAlternateRoutes = NO;
+    
+    // 直線距離が1.2km以上だと、電車などでの移動を優先するが、そうでなければ、徒歩を優先
+    if ([locationManager.currentLocation distanceFromLocation:entity.location] > 1200) {
+        request.transportType = MKDirectionsTransportTypeAny;
+    } else {
+        request.transportType = MKDirectionsTransportTypeWalking;
+    }
+    
+    MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
+    
+    [directions calculateDirectionsWithCompletionHandler:
+     ^(MKDirectionsResponse *response, NSError *error) {
+         if (error) {
+             // Handle Error
+         } else {
+            entity.route = [response.routes lastObject];
+            NSLog(@"%@ - %@",entity.placeName, entity.transitString);
+         }
+     }];
     return nil;
 }
 

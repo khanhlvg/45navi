@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @class CLLocation;
+@class MKRoute;
 
 typedef NS_ENUM(NSInteger, NVTransitType) {
     NVTransitTypeByTrain,
@@ -35,12 +36,12 @@ typedef NS_ENUM(NSInteger, NVTransitType) {
 /*
  @abstract 行き先までの移動時間。
  */
-@property (nonatomic) NSInteger transitTime;
+@property (nonatomic,readonly) NSInteger transitTime;
 
 /*
  @abstract 行き先までの行き方
  */
-@property (nonatomic) NVTransitType transitType;
+@property (nonatomic,readonly) NVTransitType transitType;
 
 /*
  @abstract 移動の所要時間の文字列　（例：徒歩　１０分）
@@ -56,5 +57,10 @@ typedef NS_ENUM(NSInteger, NVTransitType) {
 // @abstract 行き先の代表画像そのもの
 // */
 //@property (nonatomic) UIImage *image;
+
+/*
+ @abstract MapKitのroute
+ */
+@property (nonatomic) MKRoute *route;
 
 @end

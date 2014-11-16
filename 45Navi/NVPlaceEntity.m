@@ -7,6 +7,7 @@
 //
 
 #import "NVPlaceEntity.h"
+#import <MapKit/MapKit.h>
 
 @implementation NVPlaceEntity
 
@@ -28,6 +29,29 @@
     }
     
     return [NSString stringWithFormat:@"%@ %zd分",transitTypeStr,self.transitTime];
+}
+
+- (NSInteger)transitTime
+{
+    if (self.route) {
+        return self.route.expectedTravelTime / 60;
+    }
+    
+    return 1000;
+}
+
+- (NVTransitType)transitType
+{
+    if (self.route) {
+        for (MKRouteStep *step in self.route.steps) {
+            //NSLog(@"transportType = %@",step.instructions);
+            if (step.transportType != MKDirectionsTransportTypeWalking) {
+                return NVTransitTypeByTrain;
+            }
+        }
+    }
+    
+    return NVTransitTypeByFoot;
 }
 
 @end
