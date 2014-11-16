@@ -22,7 +22,13 @@
 
 - (void)setupWithEntity:(NVPlaceEntity *)entity
 {
-//    NVLocationManager *locationManager = [NVLocationManager sharedInstance];
+    NVLocationManager *locationManager = [NVLocationManager sharedInstance];
+    NVPlaceEntity *currentLocEntity = [[NVPlaceEntity alloc] init];
+    currentLocEntity.placeName = @"現在地";
+    currentLocEntity.location = locationManager.currentLocation;
+    
+    MKCoordinateRegion regionToFit = [self.class regionForAnnotations:@[currentLocEntity, entity]];
+    [self.mapView setRegion:regionToFit animated:YES];
     
     [self.mapView addAnnotation:entity];
     
@@ -75,5 +81,25 @@
     // Pass the selected object to the new view controller.
 }
 */
+
++ (MKCoordinateRegion) regionForAnnotations:(NSArray*) annotations
+{
+    double minLat=90.0f, maxLat=-90.0f;
+    double minLon=180.0f, maxLon=-180.0f;
+    
+    for (id<MKAnnotation> mka in annotations) {
+        if ( mka.coordinate.latitude  < minLat ) minLat = mka.coordinate.latitude;
+        if ( mka.coordinate.latitude  > maxLat ) maxLat = mka.coordinate.latitude;
+        if ( mka.coordinate.longitude < minLon ) minLon = mka.coordinate.longitude;
+        if ( mka.coordinate.longitude > maxLon ) maxLon = mka.coordinate.longitude;
+    }
+    
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake((minLat+maxLat)/2.0, (minLon+maxLon)/2.0);
+    MKCoordinateSpan span = MKCoordinateSpanMake(maxLat-minLat, maxLon-minLon);
+    MKCoordinateRegion region = MKCoordinateRegionMake (center, span);
+    
+    return region;
+}
+
 
 @end
