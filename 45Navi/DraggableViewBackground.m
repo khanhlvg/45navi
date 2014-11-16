@@ -43,16 +43,17 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
 //%%% sets up the extra buttons on the screen
 -(void)setupView
 {
-    self.backgroundColor = [UIColor colorWithRed:.92 green:.93 blue:.95 alpha:1]; //the gray background colors
+//  self.backgroundColor = [UIColor colorWithRed:52.0/256.0	green:152.0/256.0	blue:219.0/256.0  alpha:1.0];
+  self.backgroundColor = [UIColor lightGrayColor];
 //    menuButton = [[UIButton alloc]initWithFrame:CGRectMake(17, 34, 22, 15)];
 //    [menuButton setImage:[UIImage imageNamed:@"menuButton"] forState:UIControlStateNormal];
 //    messageButton = [[UIButton alloc]initWithFrame:CGRectMake(284, 34, 18, 18)];
 //    [messageButton setImage:[UIImage imageNamed:@"messageButton"] forState:UIControlStateNormal];
-    xButton = [[UIButton alloc]initWithFrame:CGRectMake(60, 485, 59, 59)];
-    [xButton setImage:[UIImage imageNamed:@"xButton"] forState:UIControlStateNormal];
+    xButton = [[UIButton alloc]initWithFrame:CGRectMake(6, 500, 150, 40)];
+    [xButton setImage:[UIImage imageNamed:@"btn2.png"] forState:UIControlStateNormal];
     [xButton addTarget:self action:@selector(swipeLeft) forControlEvents:UIControlEventTouchUpInside];
-    checkButton = [[UIButton alloc]initWithFrame:CGRectMake(200, 485, 59, 59)];
-    [checkButton setImage:[UIImage imageNamed:@"checkButton"] forState:UIControlStateNormal];
+    checkButton = [[UIButton alloc]initWithFrame:CGRectMake(164, 500, 150, 40)];
+    [checkButton setImage:[UIImage imageNamed:@"btn1.png"] forState:UIControlStateNormal];
     [checkButton addTarget:self action:@selector(swipeRight) forControlEvents:UIControlEventTouchUpInside];
 //    [self addSubview:menuButton];
 //    [self addSubview:messageButton];

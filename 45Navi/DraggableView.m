@@ -44,7 +44,7 @@
         [self addGestureRecognizer:panGestureRecognizer];
         [self addSubview:content];
         
-        overlayView = [[OverlayView alloc]initWithFrame:CGRectMake(self.frame.size.width/2-50, self.frame.size.width/2-50, 100, 100)];
+        overlayView = [[OverlayView alloc]initWithFrame:CGRectMake(self.frame.size.width/2-75, self.frame.size.width/2+50, 150, 45)];
         overlayView.alpha = 0;
         [self addSubview:overlayView];
     }
