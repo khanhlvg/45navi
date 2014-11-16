@@ -15,6 +15,7 @@
 
 @interface BootViewController ()
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *startSpinner;
+@property (weak, nonatomic) IBOutlet UIButton *startBtn;
 
 @end
 
@@ -42,6 +43,7 @@
     [ArticlesCache sharedInstance].articles = result;
     [_startSpinner stopAnimating];
     _startSpinner.hidden = YES;
+    _startBtn.imageView.image =[UIImage imageNamed:@"btn1.png"];
   }];
   
   NVVoiceTextService *voiceService = [NVVoiceTextService sharedInstance];

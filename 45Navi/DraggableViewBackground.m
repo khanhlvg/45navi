@@ -8,6 +8,7 @@
 
 #import "DraggableViewBackground.h"
 #import "ArticleImageFactory.h"
+#import "ArticlesCache.h"
 
 @implementation DraggableViewBackground{
     NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
@@ -22,7 +23,6 @@
 //avoid performance and memory costs
 static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any given time, must be greater than 1
 
-@synthesize exampleCardLabels; //%%% all the labels I'm using as example data at the moment
 @synthesize allCards;//%%% all the cards
 
 - (id)initWithFrame:(CGRect)frame
@@ -31,7 +31,6 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
     if (self) {
         [super layoutSubviews];
         [self setupView];
-        exampleCardLabels = [[NSArray alloc]initWithObjects:@"first",@"second",@"third",@"fourth",@"last", nil]; //%%% placeholder for card-specific information
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
         cardsLoadedIndex = 0;
@@ -67,11 +66,9 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
 -(DraggableView *)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
     DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2-30, CARD_WIDTH, CARD_HEIGHT)];
-  if(index ==0){
-  draggableView.content.image = [ArticleImageFactory imageMake:@"テレコムセンター" image:[UIImage imageNamed:@"sample3.png"]] ;
-  }else{
-    draggableView.content.image = [ArticleImageFactory imageMake:@"パレットタウン" image:[UIImage imageNamed:@"sample4.jpg"]] ;
-  }
+  
+  draggableView.content.image = [ArticleImageFactory imageMake:[[ArticlesCache sharedInstance].articles[index] valueForKey:@"placeName"]?:@"" image:[[ArticlesCache sharedInstance].articles[index] valueForKey:@"imageURL"]?:@""] ;
+  
   //[exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
     draggableView.delegate = self;
     return draggableView;
@@ -80,12 +77,12 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
 //%%% loads all the cards and puts the first x in the "loaded cards" array
 -(void)loadCards
 {
-    if([exampleCardLabels count] > 0) {
-        NSInteger numLoadedCardsCap =(([exampleCardLabels count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[exampleCardLabels count]);
+    if([[ArticlesCache sharedInstance].articles count] > 0) {
+        NSInteger numLoadedCardsCap =(([[ArticlesCache sharedInstance].articles count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[[ArticlesCache sharedInstance].articles count]);
         //%%% if the buffer size is greater than the data size, there will be an array error, so this makes sure that doesn't happen
         
         //%%% loops through the exampleCardsLabels array to create a card for each label.  This should be customized by removing "exampleCardLabels" with your own array of data
-        for (int i = 0; i<[exampleCardLabels count]; i++) {
+        for (int i = 0; i<[[ArticlesCache sharedInstance].articles count]; i++) {
             DraggableView* newCard = [self createDraggableViewWithDataAtIndex:i];
             [allCards addObject:newCard];
             
