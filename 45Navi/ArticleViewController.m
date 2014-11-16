@@ -11,6 +11,7 @@
 #import "NVWikipediaListFetcher.h"
 #import "NVLocationManager.h"
 #import "NVVoiceTextService.h"
+#import "NVEventDataFetcher.h"
 
 @interface ArticleViewController ()
 
@@ -29,9 +30,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     NVLocationManager *locationManager = [NVLocationManager sharedInstance];
-    NVWikipediaListFetcher *wikiFetcher = [[NVWikipediaListFetcher alloc] initWithLocation:locationManager.currentLocation];
+//    NVWikipediaListFetcher *wikiFetcher = [[NVWikipediaListFetcher alloc] initWithLocation:locationManager.currentLocation];
+//    
+//    [wikiFetcher startFetchingWithCompletionHandler:^(NSArray *result) {
+//        
+//    }];
     
-    [wikiFetcher startFetchingWithCompletionHandler:^(NSArray *result) {
+    NVEventDataFetcher *eventFetcher = [[NVEventDataFetcher alloc] initWithLocation:locationManager.currentLocation];
+    [eventFetcher startFetchingWithCompletionHandler:^(NSArray *result) {
         
     }];
     
