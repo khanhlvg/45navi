@@ -32,18 +32,17 @@
   [super viewWillAppear:animated];
   [_startSpinner startAnimating];
   NVLocationManager *locationManager = [NVLocationManager sharedInstance];
-  //    NVWikipediaListFetcher *wikiFetcher = [[NVWikipediaListFetcher alloc] initWithLocation:locationManager.currentLocation];
-  //
-  //    [wikiFetcher startFetchingWithCompletionHandler:^(NSArray *result) {
-  //
-  //    }];
+  NVWikipediaListFetcher *wikiFetcher = [[NVWikipediaListFetcher alloc] initWithLocation:locationManager.currentLocation];
   
   NVEventDataFetcher *eventFetcher = [[NVEventDataFetcher alloc] initWithLocation:locationManager.currentLocation];
   [eventFetcher startFetchingWithCompletionHandler:^(NSArray *result) {
-    [ArticlesCache sharedInstance].articles = result;
-    [_startSpinner stopAnimating];
-    _startSpinner.hidden = YES;
-    _startBtn.imageView.image =[UIImage imageNamed:@"btn1.png"];
+    [wikiFetcher startFetchingWithCompletionHandler:^(NSArray *result2) {
+      [ArticlesCache sharedInstance].articles = [result2 arrayByAddingObjectsFromArray:result];
+      [_startSpinner stopAnimating];
+      _startSpinner.hidden = YES;
+      _startBtn.imageView.image =[UIImage imageNamed:@"btn1.png"];
+      
+    }];
   }];
   
   NVVoiceTextService *voiceService = [NVVoiceTextService sharedInstance];

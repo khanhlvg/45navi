@@ -67,7 +67,7 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
 {
     DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2-30, CARD_WIDTH, CARD_HEIGHT)];
   
-  draggableView.content.image = [ArticleImageFactory imageMake:[[ArticlesCache sharedInstance].articles[index] valueForKey:@"placeName"]?:@"" image:[[ArticlesCache sharedInstance].articles[index] valueForKey:@"imageURL"]?:@""] ;
+  [draggableView setArticle : [ArticleImageFactory imageMake:[[ArticlesCache sharedInstance].articles[index] valueForKey:@"placeName"]?:@"" image:[[ArticlesCache sharedInstance].articles[index] valueForKey:@"imageURL"]?:@""] ];
   
   //[exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
     draggableView.delegate = self;
@@ -119,7 +119,10 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
     }else{
-    
+      loadedCards = [[NSMutableArray alloc] init];
+      allCards = [[NSMutableArray alloc] init];
+      cardsLoadedIndex = 0;
+      [self loadCards];
     }
 }
 

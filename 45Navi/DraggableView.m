@@ -209,10 +209,11 @@
                      }];
     
     [delegate cardSwipedLeft:self];
-    
     NSLog(@"NO");
 }
 
-
-
+-(void)setArticle:(UIView*)v{
+  self.content = v;
+  [self addSubview:content];
+}
 @end
