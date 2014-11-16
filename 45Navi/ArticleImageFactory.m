@@ -15,7 +15,7 @@
   UIImageView* imgView = [[UIImageView alloc]initWithFrame:(CGRect){0,0,CARD_WIDTH,CARD_HEIGHT - 100}];
   imgView.image = img;
   [tmp addSubview:imgView];
-  UILabel* titleLabel = [[UILabel alloc]initWithFrame:(CGRect){0,CARD_HEIGHT - 100,CARD_WIDTH,100}];
+  UILabel* titleLabel = [[UILabel alloc]initWithFrame:(CGRect){30,CARD_HEIGHT - 100,CARD_WIDTH-60,100}];
   titleLabel.text = title;
   [tmp addSubview:titleLabel];
 
