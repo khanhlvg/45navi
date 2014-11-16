@@ -17,7 +17,7 @@
   UIView* tmp = [[UIView alloc]initWithFrame:(CGRect){0,0,CARD_WIDTH,CARD_HEIGHT}];
   UIImageView* imgView = [[UIImageView alloc]initWithFrame:(CGRect){0,0,CARD_WIDTH,CARD_HEIGHT - 100}];
   NSURL *url = [NSURL URLWithString:imgUrl];
-  [imgView setImageWithURL:url];
+  [imgView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"sample.png"]];
   [tmp addSubview:imgView];
   UILabel* titleLabel = [[UILabel alloc]initWithFrame:(CGRect){30,CARD_HEIGHT - 100,CARD_WIDTH-60,100}];
   titleLabel.numberOfLines=3;
