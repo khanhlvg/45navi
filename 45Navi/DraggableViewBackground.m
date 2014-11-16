@@ -127,7 +127,7 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
 // This should be customized with your own action
 -(void)cardSwipedRight:(UIView *)card
 {
-  [ArticlesCache sharedInstance].selectedIndex = cardsLoadedIndex;
+  [ArticlesCache sharedInstance].selectedIndex = cardsLoadedIndex-2;
   [self.delegate gotoNavigation];
 
 //    //do whatever you want with the card that was swiped
